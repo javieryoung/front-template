@@ -1,0 +1,24 @@
+@import '../../../bootstrap.scss';
+
+
+.fill-primary path {
+    fill: $primary;
+}
+.fill-secondary path {
+    fill: $secondary;
+}
+.fill-success path {
+    fill: $success;
+}
+.fill-danger path {
+    fill: $danger;
+}
+.fill-warning path {
+    fill: $warning;
+}
+.fill-dark path {
+    fill: $dark;
+}
+.fill-info path {
+    fill: $info;
+}
