@@ -13,7 +13,7 @@ $width: 200px;
 
 @media (max-width: 992px) {
     .menu {
-        position:absolute;
+        position:fixed;
         top:0;
         left: - $width;
     }
