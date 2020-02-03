@@ -1,1 +1,39 @@
-<p>register works!</p>
+<div class="row justify-content-center">
+    <div class="col-6 shadow rounded mt-1 p-5">
+        <h1>Registro</h1>
+        <form class="mt-4 mb-3" (ngSubmit)="submit()">
+
+            <div class="form-group">
+                <input [(ngModel)]="data.email" type="email" class="form-control"  aria-describedby="emailHelp" name="email"
+                    placeholder="Email">
+                <small  class="form-text text-muted">No compartiremos tu correo con nadie.</small>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="data.name" type="text" class="form-control" name="name"
+                    placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="data.last_name" type="text" class="form-control" name="last_name"
+                    placeholder="Apellido">
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="data.password" type="password" class="form-control" name="password"
+                    placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="data.repeat_password" type="password" class="form-control" name="repeat_password"
+                    placeholder="Repeti tu contraseña">
+            </div>
+            <button type="submit" class="btn btn-danger font-weight-bold">Registrarme</button>
+        </form>
+    </div>
+
+</div>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-6 shadow rounded mt-1 p-5">
+        <h4>¿Ya tenés cuenta?</h4>
+        <p>Accedé a tu cuenta en el siguiente link </p>
+        <button type="button" class="btn btn-secondary font-weight-bold" [routerLink]="'/login'">Iniciar sesión</button>
+    </div>
+</div>

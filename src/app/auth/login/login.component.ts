@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from '../../services/toastr.service';
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -8,12 +10,13 @@ import { ToastrService } from '../../services/toastr.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private toast: ToastrService) { }
+  constructor(
+    private authService: AuthService,
+    private toast: ToastrService
+  ) { }
 
   ngOnInit() {
     
-
-    this.toast.success('holi','siii');
 
   }
 

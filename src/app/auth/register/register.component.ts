@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from '../../services/toastr.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private toast: ToastrService
+  ) { }
+
+  data: any =  {};
+
 
   ngOnInit() {
   }
 
+  submit() {
+    console.log(this.data);
+  }
 }

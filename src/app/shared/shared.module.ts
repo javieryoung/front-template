@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IconComponent } from './icon/icon.component';
-import { HttpClientModule } from '@angular/common/http';
 import { InlineSVGModule } from 'ng-inline-svg';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { RouterModule } from '@angular/router';
+
+
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 
 
 @NgModule({
@@ -14,11 +17,13 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     InlineSVGModule.forRoot(),
-    HttpClientModule
+    RouterModule,
+    HttpClientModule,
   ],
   exports: [
     NavbarComponent, IconComponent, MenuComponent, FooterComponent
   ],
-  providers:[HttpClientModule]
+  providers: [
+  ],
 })
 export class SharedModule { }

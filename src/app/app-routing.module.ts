@@ -9,6 +9,7 @@ const routes: Routes = [
 
 
   { path: '', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) },
 
 
 
