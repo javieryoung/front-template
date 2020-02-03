@@ -4,18 +4,20 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { IconComponent } from './icon/icon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InlineSVGModule } from 'ng-inline-svg';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, IconComponent],
+  declarations: [NavbarComponent, IconComponent, MenuComponent, FooterComponent],
   imports: [
     CommonModule,
     InlineSVGModule.forRoot(),
     HttpClientModule
   ],
   exports: [
-    NavbarComponent, IconComponent
+    NavbarComponent, IconComponent, MenuComponent, FooterComponent
   ],
   providers:[HttpClientModule]
 })

@@ -1,7 +1,17 @@
+
 <app-navbar></app-navbar>
 
-<div class="container-fluid mt-1">
-    <router-outlet></router-outlet>
+<div class="d-flex align-items-stretch very-long-chong">
+    <div>
+        <app-menu></app-menu>
+    </div>
+    <div class="container-fluid flex-grow-1 p-3">
+        <router-outlet></router-outlet>
+    </div>
+
 </div>
+
+<app-footer></app-footer>
+
 
 <jaspero-confirmations [defaultSettings]="{confirmText: 'Ok', declineText: 'Cancelar'}"></jaspero-confirmations>
