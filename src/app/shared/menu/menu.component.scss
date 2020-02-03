@@ -1,20 +1,24 @@
 $width: 200px;
 
+
+.backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.2);
+    z-index: 9;
+    top:0;
+}
 .menu {
     width: $width;
     height: 100%;
     transition: all 0.2s ease-out;
     background: white;
+    position:fixed;
+    top:0;
+    left: - $width;
+    z-index: 10;
     &.shown {
         left:0;
     }
 }
-
-
-@media (max-width: 992px) {
-    .menu {
-        position:fixed;
-        top:0;
-        left: - $width;
-    }
- }

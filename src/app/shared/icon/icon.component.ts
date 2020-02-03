@@ -10,11 +10,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class IconComponent implements OnInit {
 
-
-  
   @Input() icon: string = '';
   @Input() color: string = 'dark';
-
+  @Input() size: string = 'normal';
 
   constructor( private sanitizer: DomSanitizer) {
   }
