@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  shown = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  public toggle() {
+    this.shown = !this.shown;
+  }
 }

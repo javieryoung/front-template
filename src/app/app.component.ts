@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
-import {ToastrService} from './services/toastr.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +8,9 @@ import {ToastrService} from './services/toastr.service';
 })
 export class AppComponent {
   title = 'Noodle';
+  @ViewChild("menu", {static: false}) menu: any;
+
+  toggleMenu() {
+    this.menu.toggle();
+  }
 }

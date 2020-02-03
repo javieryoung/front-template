@@ -11,6 +11,7 @@ import { AuthService } from './services/auth.service';
 import { ToastrService } from './services/toastr.service';
 import { ApiService } from './services/api.service';
 import { LocalStorageService } from './services/local-storage.service';
+import { MiscService } from './services/misc.service';
 
 import { ToastrModule } from 'ngx-toastr';
 import { JasperoConfirmationsModule, ConfirmationService } from '@jaspero/ng-confirmations';
@@ -40,7 +41,8 @@ import { SharedModule } from './shared/shared.module'
     ToastrService,
     ApiService,
     LocalStorageService,
-    ConfirmationService
+    MiscService,
+    ConfirmationService,
   ],
   bootstrap: [AppComponent]
 })
