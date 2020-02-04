@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 
 import { JasperoConfirmationsModule, ConfirmationService } from '@jaspero/ng-confirmations';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 import { SharedModule } from './shared/shared.module'
 import { ToastrModule } from 'ngx-toastr';
@@ -37,6 +38,7 @@ import { HttpService } from './services/http.service';
       preventDuplicates: true,
     }),
     JasperoConfirmationsModule,
+    NgxPageScrollCoreModule.forRoot({duration: 400, scrollOffset:100}),
     FormsModule,
   ],
   providers: [

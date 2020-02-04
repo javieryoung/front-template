@@ -1,0 +1,13 @@
+<div class="alert alert-warning" *ngIf="errors.length" id="target">
+    <span *ngIf="errors.length == 1">
+        <strong>Errors:</strong> {{errors[0]}}
+    </span>
+    <span *ngIf="errors.length > 1">
+        <strong>Errorses:</strong>
+        <ul class="pl-3">
+            <li *ngFor="let e of errors">
+                {{e}}
+            </li>
+        </ul>
+    </span>
+</div>

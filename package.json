@@ -22,6 +22,7 @@
     "@jaspero/ng-confirmations": "^0.4.7",
     "bootstrap": "^4.4.1",
     "ng-inline-svg": "^9.2.2",
+    "ngx-page-scroll-core": "^7.0.0",
     "ngx-toastr": "^11.3.3",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.4",
