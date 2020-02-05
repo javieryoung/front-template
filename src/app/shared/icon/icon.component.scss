@@ -3,26 +3,40 @@
 span {
     display: flex;
 }
-.fill-primary path {
-    fill: $primary;
+.fill-primary  {
+    path, polygon {
+        fill: $primary;
+    }
 }
-.fill-secondary path {
-    fill: $secondary;
+.fill-secondary  {
+    path, polygon {
+        fill: $secondar
+    }y;
 }
-.fill-success path {
-    fill: $success;
+.fill-success  {
+    path, polygon {
+        fill: $success;
+    }
 }
-.fill-danger path {
-    fill: $danger;
+.fill-danger  {
+    path, polygon {
+        fill: $danger;
+    }
 }
-.fill-warning path {
-    fill: $warning;
+.fill-warning  {
+    path, polygon {
+        fill: $warning;
+    }
 }
-.fill-dark path {
-    fill: $dark;
+.fill-dark  {
+    path, polygon {
+        fill: $dark;
+    }
 }
-.fill-info path {
-    fill: $info;
+.fill-info  {
+    path, polygon {
+        fill: $info;
+    }
 }
 
 .small {
