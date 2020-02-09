@@ -1,7 +1,7 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center" *ngIf="!registered">
     <div class="col-12 col-lg-8 shadow rounded mt-1 p-5">
         <h1>Registro</h1>
-        <form class="mt-4 mb-3" (ngSubmit)="submit()">
+        <form class="mt-4 mb-3" (ngSubmit)="submitRegister()">
 
             <app-error-display [errors]="error"></app-error-display>
                     
@@ -26,16 +26,40 @@
                 <input [(ngModel)]="data.repeat_password" type="password" class="form-control" name="repeat_password"
                     placeholder="Repeti tu contraseña">
             </div>
-            <button type="submit" class="btn btn-danger font-weight-bold">Registrarme</button>
+            <button type="submit" class="btn btn-danger font-weight-bold col-12" showLoading [observable]="obs" [content]="'Registrarme'"></button>
+            
         </form>
     </div>
 
 </div>
 
-<div class="row justify-content-center mt-5">
+<div class="row justify-content-center mt-5" *ngIf="!registered">
     <div class="col-12 col-lg-8 shadow rounded mt-1 p-5">
         <h4>¿Ya tenés cuenta?</h4>
         <p>Accedé a tu cuenta en el siguiente link </p>
         <button type="button" class="btn btn-secondary font-weight-bold" [routerLink]="'/login'">Iniciar sesión</button>
     </div>
+</div>
+
+
+<div class="row justify-content-center" *ngIf="registered">
+    <div class="col-12 col-lg-8 shadow rounded mt-1 p-5 text-center">
+        <h1>Registro casi completo</h1>
+        
+        <p>Te enviamos un correco electrónico a tu casilla de email. <span class="text-primary"><strong>¡Entrá y valida tu correo para finalizar el registro!</strong></span></p>
+
+        <h3 class="mt-5 mb-3">Accesos directos</h3>
+        <div class="row d-flex flex-row justify-content-center">
+            <a target="_blank" href="https://gmail.com" class="col-12 col-lg-3 px-5 py-3 m-3 bg-light rounded pointer">
+                <img class="mail-logo" src="/assets/mail-icons/Gmail.png" alt="Gmail">
+            </a>
+            <a target="_blank" href="https://login.live.com" class="col-12 col-lg-3 px-5 py-3 m-3 bg-light rounded pointer">
+                <img class="mail-logo" src="/assets/mail-icons/Outlook.png" alt="Outlook">
+            </a>
+            <a target="_blank" href="https://login.yahoo.com" class="col-12 col-lg-3 px-5 py-3 m-3 bg-light rounded pointer">
+                <img class="mail-logo" src="/assets/mail-icons/Yahoo.png" alt="Yahoo">
+            </a>
+        </div>
+    </div>
+
 </div>

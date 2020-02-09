@@ -24,18 +24,17 @@ export class LoginComponent implements OnInit {
 
   submit() {
     this.error = [];
-    if (!this.data.email || !this.data.name || !this.data.last_name || !this.data.password || !this.data.repeat_password) {
+    if (!this.data.email || !this.data.password) {
       this.error.push('faltan algunos campos');
+      return ;
     }
     if (this.data.email && (this.data.email.indexOf('@') == -1 || this.data.email.indexOf('.') == -1)) {
       this.error.push('el correo electrónco no tiene un formato válido');
+      return ;
     }
-    if (this.data.password && this.data.password.length < 8) {
-      this.error.push('la contraseña debe tener al menos 8 caracteres');
-    }
-    if (this.data.password && (this.data.password != this.data.repeat_password)) {
-      this.error.push('las contraseñas no coinciden');
-    }
+    this.authService.login(this.data).subscribe((res) => {
+
+    })
   }
 
 }

@@ -17,8 +17,8 @@ export class ErrorDisplayComponent implements OnChanges {
       this.pageScrollService.scroll({
         document: document,
         scrollTarget: '#target',
-      },5);
-    })
+      });
+    },5)
   }
 
 }

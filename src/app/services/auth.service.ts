@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { LocalStorageService } from './local-storage.service';
 import { HttpService } from './http.service';
-import { Subject} from 'rxjs';
+import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
 import 'rxjs/add/operator/do';
 // import { AuthService as SocialService, FacebookLoginProvider, GoogleLoginProvider, LinkedinLoginProvider } from 'ng4-social-login';
+import { share } from "rxjs/operators"; 
 
 
 declare var FS: any;
@@ -127,12 +128,12 @@ export class AuthService {
         this.user = result;
         this.localStorage.setItem('user', this.user);
         that.subject.next(result);
-      });
+      }).pipe(share());
     return res
   }
 
   register(data) {
-    return this.http.post(this.url + '/register', data);
+    return this.http.post(this.url + '/register', data).pipe(share());
   }
 
   logout() {

@@ -11,10 +11,11 @@ import { RouterModule } from '@angular/router';
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { ErrorDisplayComponent } from './error-display/error-display.component';
+import { LoadingDirective } from './loading.directive';
 
 
 @NgModule({
-  declarations: [NavbarComponent, IconComponent, MenuComponent, FooterComponent, ErrorDisplayComponent],
+  declarations: [NavbarComponent, IconComponent, MenuComponent, FooterComponent, ErrorDisplayComponent, LoadingDirective],
   imports: [
     CommonModule,
     InlineSVGModule.forRoot(),
@@ -22,7 +23,7 @@ import { ErrorDisplayComponent } from './error-display/error-display.component';
     HttpClientModule,
   ],
   exports: [
-    NavbarComponent, IconComponent, MenuComponent, FooterComponent, ErrorDisplayComponent
+    NavbarComponent, IconComponent, MenuComponent, FooterComponent, ErrorDisplayComponent,LoadingDirective
   ],
   providers: [
   ],
