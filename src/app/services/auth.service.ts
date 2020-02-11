@@ -5,19 +5,20 @@ import { HttpService } from './http.service';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
+import {User} from '../models/user';
 import 'rxjs/add/operator/do';
 // import { AuthService as SocialService, FacebookLoginProvider, GoogleLoginProvider, LinkedinLoginProvider } from 'ng4-social-login';
 import { share } from "rxjs/operators"; 
 
 
-declare var FS: any;
+//FULLSTORY STUFF: declare var FS: any;
 
 import { ToastrService } from './toastr.service';
 
 @Injectable()
 export class AuthService {
 
-  user:any;
+  user:User;
   url:string;
   subject:any;
 
@@ -61,7 +62,8 @@ export class AuthService {
 
 
     this.url = this.apiService.getUrl() + '/auth';
-    this.user = this.localStorage.getItem('user');
+    this.user = new User().deserialize(this.localStorage.getItem('user'));
+    
 
     if(this.user) {
       this.newUserInTown(this.user);
@@ -81,17 +83,17 @@ export class AuthService {
 
 
 
-  currentUser() {
+  currentUser() : User {
     if (this.user) {
       return this.user;
     } else {
-      return false;
+      return null;
     }
   }
 
   setToken(token) {
     if (!this.user)
-      this.user = {};
+      this.user = null;
     this.user.token = token;
     this.localStorage.setItem('user', this.user);
     this.newUserInTown(this.user);
@@ -110,6 +112,7 @@ export class AuthService {
 
   newUserInTown(what) {
     this.subject.next(what);
+    /* FULLSTORY STUFF
     if (what) {
       FS.identify(what.id, {
        displayName: what.name + ' ' + what.last_name,
@@ -118,13 +121,14 @@ export class AuthService {
     } else {
       FS.identify(false);
     }
+    */
   }
 
 
   login(credentials) {
     let that = this;
     let res = this.http.post(this.url + '/login', credentials)
-      .do(result => {
+      .do((result : User) => {
         this.user = result;
         this.localStorage.setItem('user', this.user);
         that.subject.next(result);
@@ -147,7 +151,7 @@ export class AuthService {
   }
 
   confirmEmail(token) {
-    return this.http.post(this.url + '/confirm_email/' + token, {}).do(result => {
+    return this.http.post(this.url + '/confirm_email/' + token, {}).do((result : User) => {
         this.user = result;
         this.localStorage.setItem('user', this.user);
         this.newUserInTown(result);

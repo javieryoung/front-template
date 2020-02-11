@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-12 col-lg-8 shadow rounded mt-1 p-5">
         <h1>Iniciar sesión</h1>
-        <form class="mt-4 mb-3" (ngSubmit)="submit()">
+        <form class="mt-4 mb-3" (ngSubmit)="submitLogin()">
             <app-error-display [errors]="error"></app-error-display>
 
             <div class="form-group">
@@ -12,7 +12,8 @@
                 <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="data.password" name="password">
             </div>
             <p><a href>Olvidé mi contraseña</a></p>
-            <button type="submit" class="btn btn-secondary font-weight-bold">Ingresar</button>
+            <button type="submit" class="btn btn-secondary font-weight-bold col-12" showLoading [observable]="obs" [content]="'Iniciar sesión'"></button>
+            
         </form>
     </div>
 

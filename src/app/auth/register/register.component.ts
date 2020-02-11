@@ -43,7 +43,6 @@ export class RegisterComponent implements OnInit {
     this.obs = this.authService.register(this.data);
     this.obs.subscribe((res) => {
       this.registered = true;
-
     })
   }
 }

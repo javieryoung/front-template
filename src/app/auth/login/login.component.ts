@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
 
   data: any = {};
   error: any = [];
+  obs: any;
+
   constructor(
     private authService: AuthService,
     private toast: ToastrService
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  submit() {
+  submitLogin() {
     this.error = [];
     if (!this.data.email || !this.data.password) {
       this.error.push('faltan algunos campos');
@@ -32,9 +34,12 @@ export class LoginComponent implements OnInit {
       this.error.push('el correo electrónco no tiene un formato válido');
       return ;
     }
-    this.authService.login(this.data).subscribe((res) => {
+
+    this.obs = this.authService.login(this.data);
+    this.obs.subscribe((res) => {
 
     })
+3385
   }
 
 }
