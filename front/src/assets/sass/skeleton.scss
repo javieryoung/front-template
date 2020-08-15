@@ -1,0 +1,47 @@
+div.skeleton.dad {
+    animation: loading 1.7s infinite linear;
+  }
+
+
+  div.skeleton {
+      min-height: 80px;
+      margin-bottom: 15px;
+  }
+  div.skeleton:not(.dad), h1.skeleton, h2.skeleton, h3.skeleton, h4.skeleton, h5.skeleton, h6.skeleton, p.skeleton, a.skeleton {
+      background: rgba(0,0,0,0.1);
+  }
+  
+  img.skeleton.card-img-top{
+    height: 189.75px;
+  }
+  
+  h1.skeleton{
+    height: 30px;
+    width: 200px;
+    margin-bottom: 15px;
+  }
+
+  p.skeleton {
+    height: 18px;
+    margin-bottom: 10px;
+  }
+  p.skeleton.l-1 {
+    width: 90%;
+  } 
+  p.skeleton.l-2 {
+    width: 70%;
+  } 
+  p.skeleton.l-3 {
+    width: 30%;
+  } 
+@keyframes loading {
+    0% {
+        background-color: rgba(230,230,230,2);
+    }
+    50% {
+        background-color: rgba(230,230,230,0.5);
+    }
+    100% {
+        background-color: rgba(230,230,230,2);
+    }
+}

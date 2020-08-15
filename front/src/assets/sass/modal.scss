@@ -1,0 +1,56 @@
+.modal-dialog {
+    
+    padding: 15px;
+    margin:0;
+}
+
+.modal-big {
+    .modal-dialog {
+        width: 100%;
+        max-width: 950px;
+    }
+}
+ 
+
+.modal-full {
+    .modal-dialog {
+        width: 100%;
+        max-width: 100%;
+        padding:0;
+        height: 100vh;
+        .modal-content {
+            height: 100%;
+            border-radius:0;
+        }
+    }
+}
+.small-modal {
+    .modal-dialog {
+        min-width: auto;
+    }
+}
+
+
+.modal-content{
+    animation-name: modalIn;
+    animation-duration: 0.3s;
+    padding: 30px;
+    overflow-y: auto !important;
+  }
+  
+
+
+.not-full-width {
+    display: flex !important;
+    align-items: center;
+    .modal-dialog {
+        display: flex !important;
+        justify-content: center;
+        .modal-content {
+            max-width: 500px;
+        }
+    }
+}
+.modal.show .modal-dialog {
+    margin:0 auto;
+}

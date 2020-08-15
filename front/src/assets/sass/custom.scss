@@ -1,0 +1,167 @@
+@import './skeleton';
+@import './checkbutton';
+@import './modal';
+@import './body-bg';
+@import './sortable';
+@import './zoom';
+@import './animations';
+@import './edit-photo-directive';
+@import './right-bar';
+@import './videogular';
+
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.ck.ck-balloon-panel {
+    z-index:9999 !important;
+}
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+body {
+    font-family: Rubik;
+    min-height: 100%;
+    position: absolute;
+    width:100%;
+}
+.radius {
+    border-radius: 30px;
+}
+
+
+
+.pointer {
+    cursor: pointer;
+}
+
+
+blockquote {
+    padding: 20px 0 20px 30px;
+    border-left: $light 6px solid;
+}
+
+.ng-busy-backdrop, .ng-busy {
+    position: fixed !important;
+}
+
+// adding stuff to bootstrap
+.btn-round-lg{
+    border-radius: 22.5px;
+}
+.btn-round{
+    border-radius: 17px;
+}
+.btn-round-sm{
+    border-radius: 15px;
+}
+
+.fade-out {
+    transition: all 0.4s linear;
+    opacity: 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.4s linear;
+}
+
+.font-weight-regular {
+    font-weight: 400;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.form-control {
+    &.h1 {
+        font-size: 2.5rem;
+    }
+    &.h2 {
+        font-size: 2rem;
+    }
+    &.h3 {
+        font-size: 1.75rem;
+    }
+    &.h4 {
+        font-size: 1.5rem;
+    }
+    &.h5 {
+        font-size: 1.25rem;
+    }
+    &.h6 {
+        font-size: 1rem;
+    }
+}
+
+.form-control:not(.with-border) {
+    border-width:2px;
+    border-radius:0;
+    border-top:0;
+    border-left:0;
+    border-right:0;
+}
+
+ul, ol {
+    margin-left: 20px;
+}
+.ck-editor__main {
+    ul, ol {
+        margin-left: 20px;
+    }
+}
+
+.ck-toolbar, .ck-content {
+    border-color: theme-color(grey) !important;
+}
+
+.ck-toolbar {
+    border-top-left-radius: 0.25rem !important;
+    border-top-right-radius: 0.25rem !important;
+}
+.ck-content {
+    border-top: 1px solid theme-color(grey) !important;
+    min-height: 100px;
+    border-bottom-left-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+}
+
+
+p {
+    margin:0;
+}
+
+.drop-area {
+    background: rgba(0,0,0,0.1);
+    border: 4px dashed rgba(0,0,0,0.1);
+    color: $dark;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+.course-cover-image {
+    background: url("/assets/images/default-bg.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 300px;
+}

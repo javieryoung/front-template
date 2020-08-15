@@ -1,0 +1,80 @@
+<div class="backdrop" *ngIf="shown" (click)="toggle()"></div>
+<div class="shadow-lg align-self-stretch menu" [class.shown]="shown">
+    
+    <div class="d-flex align-items-center justify-content-center py-3">
+        <img src="/assets/logo-white.png" alt="{{appName}}">
+    </div>
+    
+    <button class="btn btn-red py-4 text-left rounded-0 text-white w-100 font-weight-bold d-flex justify-content-between" (click)="close()" [routerLink]="'/'">
+        <div class="d-flex align-items-center">
+            <app-icon icon="home" color="white" class="mr-3"></app-icon>
+            <span>Inicio </span>
+        </div>
+        <app-icon icon="angle-right" color="white"></app-icon>
+    </button>
+
+    <!--
+    <button *ngIf="user" class="btn btn-orange py-4 text-left rounded-0 text-white w-100 font-weight-bold d-flex justify-content-between" (click)="close()" [routerLink]="'/'">
+        <div class="d-flex align-items-center">
+            <app-icon icon="user" color="white" class="mr-3"></app-icon>
+            <span>Perfil </span>
+        </div>
+        <app-icon icon="angle-right" color="white"></app-icon>
+    </button>
+
+    -->
+    <button *ngIf="!user" class="btn btn-primary py-4 text-left rounded-0 text-white w-100 font-weight-bold d-flex justify-content-between" (click)="close()" [routerLink]="'/login'">
+        <div class="d-flex align-items-center">
+            <app-icon icon="user" color="white" class="mr-3"></app-icon>
+            <span>Iniciar sesión </span>
+        </div>
+        <app-icon icon="angle-right" color="white"></app-icon>
+    </button>
+
+    <button *ngIf="!user" class="btn btn-orange py-4 text-left rounded-0 text-white w-100 font-weight-bold d-flex justify-content-between" (click)="close()" [routerLink]="'/registro'">
+        <div class="d-flex align-items-center">
+            <app-icon icon="user" color="white" class="mr-3"></app-icon>
+            <span>Registrarse </span>
+        </div>
+        <app-icon icon="angle-right" color="white"></app-icon>
+    </button>
+
+
+    <!-- COURSES -->
+    <ng-container *ngFor="let a of accesses">
+
+        <button *ngIf="a.over == 'all' && a.role == 'admin'" class="btn btn-secondary py-4 text-left rounded-0 text-white w-100 font-weight-bold d-flex justify-content-between" (click)="close()" [routerLink]="'/admin'">
+            <div class="d-flex align-items-center">
+                <app-icon icon="seedling" color="white" class="mr-3"></app-icon>
+                <span>Administrador </span>
+            </div>
+            <app-icon icon="angle-right" color="white"></app-icon>
+        </button>
+
+        <button *ngIf="a.resource" class="btn btn-primary py-4 text-left rounded-0 text-white w-100 font-weight-bold d-flex justify-content-between" (click)="close()" [routerLink]="'/ver/' + a.resource.id">
+            <div class="d-flex align-items-center">
+                <app-icon icon="clipboard" color="white" class="mr-3"></app-icon>
+                <span>{{a.resource.title}} </span>
+            </div>
+            <app-icon icon="angle-right" color="white"></app-icon>
+        </button>
+    </ng-container>
+    <!-- / COURSES -->
+
+
+    <button *ngIf="user" class="btn btn-dark py-4 text-left rounded-0 text-white w-100 font-weight-bold d-flex justify-content-between" (click)="close()" [routerLink]="'/usuario/editar'">
+        <div class="d-flex align-items-center">
+            <app-icon icon="user" color="white" class="mr-3"></app-icon>
+            <span>Editar perfil</span>
+        </div>
+        <app-icon icon="angle-right" color="white"></app-icon>
+    </button>
+
+    <button *ngIf="user" class="btn btn-dark py-4 text-left rounded-0 text-white w-100 font-weight-bold d-flex justify-content-between" (click)="logout(); close()" [routerLink]="'/'">
+        <div class="d-flex align-items-center">
+            <app-icon icon="sign-out-alt" color="white" class="mr-3"></app-icon>
+            <span>Cerrar sesión </span>
+        </div>
+        <app-icon icon="angle-right" color="white"></app-icon>
+    </button>
+</div>

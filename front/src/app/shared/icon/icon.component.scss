@@ -1,0 +1,88 @@
+@import 'src/app/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap";
+
+span {
+    display: flex;
+}
+.fill-primary  {
+    path, polygon, circle, rect[fill] {
+        fill: theme-color(primary);
+    }
+}
+.fill-secondary  {
+    path, polygon, circle, rect[fill] {
+        fill: theme-color(secondary)
+    };
+}
+.fill-success  {
+    path, polygon, circle, rect[fill] {
+        fill: theme-color(success);
+    }
+}
+.fill-danger  {
+    path, polygon, circle, rect[fill] {
+        fill: theme-color(danger);
+    }
+}
+.fill-warning  {
+    path, polygon, circle, rect[fill] {
+        fill: theme-color(warning);
+    }
+}
+.fill-dark  {
+    path, polygon, circle, rect[fill] {
+        fill: theme-color(dark);
+    }
+}
+.fill-light  {
+    path, polygon, circle, rect[fill] {
+        fill: theme-color(light);
+    }
+}
+.fill-info  {
+    path, polygon, circle, rect[fill] {
+        fill: theme-color(info);
+    }
+}
+.fill-blue  {
+    path, polygon, circle, rect[fill] {
+        fill: theme-color(blue);
+    }
+}
+.fill-white  {
+    path, polygon, circle, rect[fill] {
+        fill: white;
+    }
+}
+.small {
+    svg {
+        width: 10px;
+    }
+}
+.normal {
+    svg {
+        width: 15px;
+    }
+}
+
+.big {
+    svg {
+        width: 20px;
+    }
+}
+
+.huge {
+    svg {
+        width: 30px;
+    }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg);   }
+    to   { transform: rotate(360deg); }
+}
+.spin {
+    svg {
+        animation: rotate steps(8) 800ms infinite;
+    }
+}

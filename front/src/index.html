@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sauce</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <script src='https://meet.jit.si/external_api.js'></script>
+
+  <script src="node_modules/chart.js/src/chart.js"></script>
+  <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+
+  <script>
+    Date.prototype.database = function() {
+      var d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear();
+
+      if (month.length < 2) 
+          month = '0' + month;
+      if (day.length < 2) 
+          day = '0' + day;
+
+      return [year, month, day].join('-');
+    }
+  </script>
+
+  <style type="text/css">
+    .pace .pace-activity {
+      top: 19px;
+      right: 19px;
+      display: none;
+    }
+    .page-loading {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+      background: #f8f9fa;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: -1;
+    }
+    .loading-icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 38px;
+      height: 38px;
+      margin-left: -19px;
+      margin-top: -19px;
+    }
+    app-root:empty ~ .page-loading {
+      opacity: 1;
+      z-index: 1;
+    }
+    #MathJax_Message {
+      display:none;
+    }
+  </style>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        "HTML-CSS": {
+          linebreaks: { automatic: true }
+        },
+        "CommonHTML": {
+          linebreaks: { automatic: true }
+        }
+      });
+  </script>
+  
+</head>
+<body>
+  <app-root></app-root>
+  
+  <div class="page-loading">
+    <img src="assets/images/oval.svg" class="loading-icon" />
+  </div>
+  
+</body>
+</html>

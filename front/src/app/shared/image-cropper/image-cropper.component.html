@@ -1,0 +1,16 @@
+<image-cropper
+    [imageFile]="params.file"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="params.aspectRatio"
+    [resizeToWidth]="params.width"
+    [resizeToHeight]="params.height"
+    [backgroundColor]="'#FFFFFF'"
+    (imageCropped)="imageCropped($event)"
+    format="jpg"
+></image-cropper>
+
+
+<div class="d-flex my-3 justify-content-end">
+    <button class="btn btn-danger font-weight-bold rounded-0 px-5" (click)="cancel()"> Cancelar </button>
+    <button class="btn btn-primary font-weight-bold rounded-0 px-5" (click)="upload()"> Subir </button>
+</div>

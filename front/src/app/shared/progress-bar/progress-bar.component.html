@@ -1,0 +1,9 @@
+
+<div class="progress" style="height: 30px;">
+    <div class="progress-bar bg-secondary" role="progressbar" [ngStyle]="{ width: percent + '%'}">
+        <p class="m-0 font-weight-bold">  {{percent | number: '1.0-0' }}% completado </p>
+    </div> 
+    <div class="d-flex align-items-center" *ngIf="percent == 0">
+        <p class="m-0 px-2 font-weight-bold">  0% completado </p>
+    </div>
+</div>

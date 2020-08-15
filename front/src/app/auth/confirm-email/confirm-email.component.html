@@ -1,0 +1,12 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-9 bg-white shadow rounded mt-1 p-5">
+        <h5 *ngIf="status == 'waiting'"> Confirmación de mail en proceso...</h5>
+
+        <h5 *ngIf="status == 'success'"> Confirmación de mail completa</h5>
+        <p *ngIf="status == 'success'"> ¡Ya podes acceder a tu cuenta!
+            <h5 *ngIf="status == 'error'"> Error al confirmar mail</h5>
+            <button class="btn font-weight-bold btn-danger px-4 py-2 mt-3" [disabled]="status != 'success'" [routerLink]="'/'"> Ir al
+                Inicio </button>
+    </div>
+
+</div>

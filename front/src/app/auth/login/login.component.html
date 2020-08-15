@@ -1,0 +1,64 @@
+<div id="target1"></div>
+<ng-container *ngIf="!register">
+
+    <div class="row justify-content-center" *ngIf="!recoveringPassword">
+        <div class="col-12 col-lg-9 bg-white shadow rounded mt-1 p-5">
+            <h1>Iniciar sesión</h1>
+            <form class="mt-4 mb-3" (ngSubmit)="submitLogin()">
+                <app-error-display [errors]="error"></app-error-display>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" [(ngModel)]="data.email" name="email1">
+                    <small class="form-text text-muted">No compartiremos tu correo con nadie.</small>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="data.password" name="password1">
+                </div>
+                <p class="mb-2"><a class="text-primary pointer" (click)="recoveringPassword = true;">Olvidé mi contraseña</a></p> 
+                <button type="submit" class="btn btn-secondary font-weight-bold col-12" showLoading [observable]="obs" [content]="'Iniciar sesión'"></button>
+                
+
+
+                <a class="btn btn-primary w-100 text-white mt-4 font-weight-bold d-flex align-items-center justify-content-center" (click)="facebook()">
+                    <span class="fab fa-facebook-f"></span> <app-icon color="white" class="mr-2" icon="facebook" social="true"></app-icon> Ingresá con Facebook
+                </a>
+                <a class="btn btn-primary w-100 text-white mt-4 font-weight-bold d-flex align-items-center justify-content-center" (click)="google()">
+                    <span class="fab fa-google"></span> <app-icon color="white" class="mr-2" icon="google" social="true"></app-icon> Ingresá con Google
+                </a>
+                
+            </form>
+        </div>
+
+    </div>
+
+    <div class="row justify-content-center" *ngIf="recoveringPassword">
+        <div class="col-12 col-lg-9 bg-white shadow rounded mt-1 p-5">
+            <h1>Recuperar contraseña</h1>
+            <form class="mt-4 mb-3" (ngSubmit)="recoverPassword()">
+                <app-error-display [errors]="error"></app-error-display>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" [(ngModel)]="data.email" name="email1">
+                    <small class="form-text text-muted">No compartiremos tu correo con nadie.</small>
+                </div>
+                <p class="mb-2"><a class="text-primary pointer mb-2" (click)="recoveringPassword = false;">volver</a></p>
+                <button type="submit" class="btn btn-secondary font-weight-bold col-12" showLoading [observable]="obs" [content]="'Recuperar contraseña'"></button>
+                
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-12 col-lg-9 bg-white shadow rounded mt-1 p-5">
+            <h4>¿No tenés cuenta?</h4>
+            <p>Create una cuenta en el sitio para acceder a todas sus funcionalidades </p>
+            <button type="button" class="btn btn-danger font-weight-bold" (click)="register = true; scrollTop()">Registrate</button>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="register">
+    <app-register (changeToLogin)="changeToLogin()" (loggedIn)="doLoggedIn()"></app-register>
+</ng-container>

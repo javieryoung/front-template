@@ -1,0 +1,25 @@
+.right-bar {
+    z-index: 3;
+    position: fixed;
+    right:0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    -webkit-box-shadow: 2px 0px 20px -2px rgba(0, 0, 0, 0.2) !important;
+    -moz-box-shadow: 2px 0px 20px -2px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 2px 0px 20px -2px rgba(0, 0, 0, 0.2) !important;
+
+
+
+    .item {
+        padding: 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        cursor: pointer;
+        &:last-child {
+            border:none;
+        }
+    }
+}

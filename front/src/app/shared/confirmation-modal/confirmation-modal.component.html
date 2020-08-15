@@ -1,0 +1,9 @@
+<div class="p-3">
+    <h3>{{title}} </h3>
+    <p>{{text}} </p>
+
+    <div class="d-flex justify-content-end mt-5">
+        <button class="btn btn-danger font-weight-bold rounded-0" (click)="no()">{{declineText || 'Cancelar'}} </button>
+        <button class="btn btn-primary font-weight-bold rounded-0 ml-2" (click)="yes()">{{okText || 'Ok'}} </button>
+    </div>
+</div>

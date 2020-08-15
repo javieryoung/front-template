@@ -1,0 +1,14 @@
+<div class="progress" style="height: 30px;" *ngIf="(file.progress && !hideButton) || (hideButton && file.progress < 100)">
+    <div class="progress-bar" role="progressbar" [ngStyle]="{ width: file.progress + '%'}">
+        {{file.progress == 100 ? '¡Carga completa!' : file.progress + '%'}}
+    </div>
+</div>
+
+<button class="btn btn-primary rounded-0 font-weight-bold px-5 my-2 py-2" (click)="onClick()" *ngIf="!hideButton">
+    <app-icon icon="upload" color="white"></app-icon>
+    <span *ngIf="!uploading" class="pt-1 ml-2" style="padding-top:2px !important;"> {{buttonText}} </span>
+    <img class="ml-2" src="/assets/loader.svg" alt="loader" width="50px" *ngIf="uploading">
+</button>
+
+<input type="file" #fileUpload id="fileUpload" name="fileUpload" style="display:none;" />
+<!-- MULTIPLE TODO: <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" /> -->

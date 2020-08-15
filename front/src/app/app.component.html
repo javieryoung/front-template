@@ -1,0 +1,14 @@
+<app-navbar (toggleMenu)="toggleMenu()" style="z-index:1"></app-navbar>
+
+<div class="d-flex align-items-stretch padding-top-total" [class.very-long-chong]="!inHome" [ngStyle]="{'margin-bottom.px': padding}" [class.pb-4]="!inHome" style="z-index:2">
+    <div>
+        <app-menu #menu></app-menu>
+    </div>
+    <div class="container-fluid flex-grow-1">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<app-footer id="footer"></app-footer>
+
+

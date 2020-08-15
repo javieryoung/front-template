@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\shared",
+    "\\src\\app\\shared\\exercise",
+    "\\src\\app\\shared\\interactive-video-player",
+    "\\src\\app\\viewer",
+    "\\src\\app\\viewer\\editor",
+    "\\src\\app\\viewer\\editor\\edit-video",
+    "\\src\\app\\viewer\\view-chapter"
+  ],
+  "SelectedNode": "\\src\\app\\shared\\interactive-video-player\\interactive-video-player.component.ts",
+  "PreviewInSolutionExplorer": false
+}

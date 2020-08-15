@@ -1,0 +1,24 @@
+<div (click)="edit()" class="w-100">
+
+    <div *ngIf="!editing" class="d-flex" [class.align-items-center]="type != 'editor'">
+        <ng-content></ng-content>
+        <app-icon icon="pen" class="ml-2" color="light"></app-icon>
+    </div>
+    
+    <input type="text" *ngIf="editing && type != 'editor'" class="{{type}} edit__editor_repeat_noo" (blur)="blur()" [(ngModel)]="edited" #input>
+    <ckeditor 
+        *ngIf="editing && type == 'editor'" 
+        [editor]="Editor"
+        (blur)="blur()" [(ngModel)]="edited" 
+        [config]="{ placeholder: content, language: 'es', toolbar: [ 'heading', '|', 'bold', 'italic', 'link', '|', 'bulletedList', 'numberedList', 'blockQuote', '|', 'undo', 'redo' ],
+            heading: {
+                options: [
+                    { model: 'paragraph', title: 'Párrafo', class: 'ck-heading_paragraph' },
+                    { model: 'heading1', view: 'h2', title: 'Subtítulo', class: 'ck-heading_heading1' },
+                    { model: 'heading2', view: 'h3', title: 'Cabezal', class: 'ck-heading_heading2' }
+                ]
+            }
+        }"
+        (ready)="onEditorReady($event)"></ckeditor>
+
+</div>

@@ -1,0 +1,28 @@
+@import 'src/app/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+$width: 350px;
+
+
+.backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    z-index: 9;
+    top:0;
+}
+.menu {
+    width: $width;
+    max-width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all 0.2s ease-out;
+    background: theme-color(dark);
+    position:fixed;
+    top:0;
+    left: - $width;
+    z-index: 10;
+    &.shown {
+        left:0;
+    }
+}

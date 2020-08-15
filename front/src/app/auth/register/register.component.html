@@ -1,0 +1,72 @@
+<div class="row justify-content-center" *ngIf="!registered">
+    <div class="col-12 col-lg-9 bg-white shadow rounded mt-1 p-5">
+        <h1>Registro</h1>
+        <form class="mt-4 mb-3" (ngSubmit)="submitRegister()">
+
+            <app-error-display [errors]="error"></app-error-display>
+                    
+            <div class="form-group">
+                <input [(ngModel)]="data.email" type="email" class="form-control"  aria-describedby="emailHelp" name="email1"
+                    placeholder="Email">
+                <small  class="form-text text-muted">No compartiremos tu correo con nadie.</small>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="data.name" type="text" class="form-control" name="name1"
+                    placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="data.last_name" type="text" class="form-control" name="last_name1"
+                    placeholder="Apellido">
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="data.password" type="password" class="form-control" name="password1"
+                    placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="data.repeat_password" type="password" class="form-control" name="repeat_password1"
+                    placeholder="Repeti tu contraseña">
+            </div>
+            <button type="submit" class="btn btn-danger font-weight-bold col-12" showLoading [observable]="obs" [content]="'Registrarme'"></button>
+            
+
+            <a class="btn btn-primary w-100 text-white mt-4 font-weight-bold d-flex align-items-center justify-content-center" (click)="facebook()">
+                <span class="fab fa-facebook-f"></span> <app-icon color="white" class="mr-2" icon="facebook" social="true"></app-icon> Ingresá con Facebook
+            </a>
+            <a class="btn btn-primary w-100 text-white mt-4 font-weight-bold d-flex align-items-center justify-content-center" (click)="google()">
+                <span class="fab fa-google"></span> <app-icon color="white" class="mr-2" icon="google" social="true"></app-icon> Ingresá con Google
+            </a>
+        </form>
+    </div>
+
+</div>
+
+<div class="row justify-content-center mt-5" *ngIf="!registered">
+    <div class="col-12 col-lg-9 bg-white shadow rounded mt-1 p-5">
+        <h4>¿Ya tenés cuenta?</h4>
+        <p>Accedé a tu cuenta en el siguiente link </p>
+        <button type="button" class="btn btn-secondary font-weight-bold" (click)="login()">Iniciar sesión</button>
+    </div>
+</div>
+
+
+<div class="row justify-content-center" *ngIf="registered">
+    <div class="col-12 col-lg-9 bg-white shadow rounded mt-1 p-5 text-center">
+        <h1>Registro casi completo</h1>
+        
+        <p>Te enviamos un correo electrónico a tu casilla de email. <span class="text-primary"><strong>¡Entrá y valida tu correo para finalizar el registro!</strong></span></p>
+
+        <h3 class="mt-5 mb-3">Accesos directos</h3>
+        <div class="row d-flex flex-row justify-content-center">
+            <a target="_blank" href="https://gmail.com" class="col-12 col-lg-3 px-5 py-3 m-3 bg-light rounded pointer">
+                <img class="mail-logo" src="/assets/mail-icons/Gmail.png" alt="Gmail">
+            </a>
+            <a target="_blank" href="https://login.live.com" class="col-12 col-lg-3 px-5 py-3 m-3 bg-light rounded pointer">
+                <img class="mail-logo" src="/assets/mail-icons/Outlook.png" alt="Outlook">
+            </a>
+            <a target="_blank" href="https://login.yahoo.com" class="col-12 col-lg-3 px-5 py-3 m-3 bg-light rounded pointer">
+                <img class="mail-logo" src="/assets/mail-icons/Yahoo.png" alt="Yahoo">
+            </a>
+        </div>
+    </div>
+
+</div>

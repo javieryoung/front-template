@@ -1,0 +1,28 @@
+@import 'src/app/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap";
+
+.edit__editor_repeat_noo {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    color: theme-color(dark);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid theme-color(light);
+    border-radius: 0.25rem;
+    -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    
+    border-width:2px;
+    border-radius:0;
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    &:focus {
+        border-color: theme-color(primary);
+    }
+}
+
+ul,ol {
+    margin-left: 30px;
+}

@@ -1,0 +1,37 @@
+@import 'src/app/bootstrap.scss';
+
+.profile-picture{
+    height: 40px;
+    width: 40px;
+}
+
+.transparent {
+    box-shadow: none !important;
+}
+
+.burger {
+    border:none;
+    background:none;
+}
+
+.cart {
+    position: relative;
+    .badge {
+        border-radius: 40px;
+        padding: 3px 5px;
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+        color: #fff;
+    }
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+.line-height {
+    line-height: 18px;
+}

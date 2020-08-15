@@ -1,0 +1,25 @@
+.buttons {
+    margin-bottom: -40px;
+    .btn {
+        height: 80px;
+        font-size: 30px;
+        line-height: 30px;
+    }
+}
+
+.sitting-girl {
+    width: 341px;
+    height:422px;
+    margin-bottom: -195px;
+    transform: scale(1.2);
+}
+
+.widthImage {
+    width: 335px;
+}
+
+@media (max-width: 360px) {
+    .widthImage {
+        width: 100%;
+    }
+}

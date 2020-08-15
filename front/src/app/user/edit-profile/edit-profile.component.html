@@ -1,0 +1,54 @@
+<div class="col d-flex justify-content-center mb-4 mt-5" [ngBusy]="busy">
+    <div class="col-12 col-lg-9 shadow px-2 px-md-5 py-5 bg-white relative d-felx flex-wrap justify-content-around">
+        <div class="imageProfile absolute pointer rounded-circle" editPhoto (click)="imageUserSelect()">
+            <img src="{{user.imageUrl()}}" alt="profile" class="profile-picture">
+        </div>
+        <app-file-uploader 
+            [uploadService]="userService" 
+            [uploadMethod]="'uploadProfilePicture'" 
+            (fileUploaded)="profilePicture($event)"
+            [maxInMb]="10"
+            [crop]="true"
+            [width]="300"
+            [height]="300"
+            [aspectRatio]="1 / 1"
+            [hideButton]="true"
+            #imageUploader>
+        </app-file-uploader>
+        <h3 class="mb-5">Tus datos</h3>
+        <div class="sp col col-12 d-flex flex-wrap justify-content-between my-4">
+            <div class="col-12 col-sm-6 pl-sm-1">
+                <input class="form-control" type="text" placeholder="nombre" [(ngModel)]="user.name">
+            </div>
+            <div class="col-12 col-sm-6 pr-sm-1">
+                <input class="form-control" type="text" [(ngModel)]="user.last_name">
+            </div>
+        </div>
+        <div class="sp col col-12 d-flex flex-wrap justify-content-between my-4">
+            <div class="col-12 col-sm-6 pr-sm-1">
+                <input class="form-control" type="email" [(ngModel)]="user.email" disabled>
+            </div>
+            <!--
+            <div class="col-12 col-sm-6 pl-sm-1">
+                <input class="form-control" type="text" [(ngModel)]="user.birth_date" placeholder="00/00/0000">
+            </div>
+            -->
+        </div>
+        <div class="col-12 text-right mt-5">
+            <div class="btn btn-primary rounded-0 font-weight-bold" (click)="save()">Guardar</div>
+        </div>
+    </div>
+</div>
+<div class="col d-flex justify-content-center mb-4 mt-5" [ngBusy]="busy">
+    <div class="col-12 col-lg-9 shadow px-2 px-md-5 py-5 bg-white relative d-felx flex-wrap justify-content-around">
+        <h3 class="mb-5">Cambiar contraseña</h3>
+        <div class="sp col col-12 d-flex flex-wrap justify-content-start">
+            <input class="col-12 form-control my-3" type="password" placeholder="Contraseña actual - si no tenés contraseña dejá este campo vacío" [(ngModel)]="password">
+            <input class="col-12 form-control my-3" type="password" placeholder="Contraseña nueva" [(ngModel)]="newPassword">
+            <input class="col-12 form-control my-3" type="password" placeholder="Repetir contraseña" [(ngModel)]="repeatNewPassword">
+        </div>
+        <div class="col-12 text-right mt-5">
+            <div class="btn btn-primary rounded-0 font-weight-bold" (click)="updatePassword()">Cambiar contraseña</div>
+        </div>
+    </div>
+</div>

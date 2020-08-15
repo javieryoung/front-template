@@ -1,0 +1,6 @@
+
+
+
+
+<fa-icon *ngIf="!social" [icon]="icon" class="{{size}} fill-{{color}}" [class.spin]="icon == 'spinner'"></fa-icon>
+<fa-icon *ngIf="social" [icon]="['fab', icon]" class="{{size}} fill-{{color}}" [class.spin]="icon == 'spinner'"></fa-icon>
